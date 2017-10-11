@@ -1,29 +1,19 @@
-<!doctype html>
-<html class="no-js">
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>HTML Audio Player</title>
-
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link href="css/main.css" rel="stylesheet">
-
+    <title>Custom Audio</title>
+    <script src="js/audio.min.js"></script>
+    <link rel="stylesheet" href="css/audio.css" media="screen">
+    <script>
+      audiojs.events.ready(function() {
+        audiojs.createAll();
+      });
+    </script>
   </head>
   <body>
-   <audio id="music" preload="true">
-    <source src="CoB.mp3">
-    </audio>
-    <div id="audioplayer">
-    <button id="pButton" class="play"></button>
-    <div id="timeline">    
-      <div id="playhead"></div>
-    </div>
-    <div id="volume_control">
-      <label id="rngVolume_label" for="rngVolume">Volume:</label>
-      <input type="range" onchange="setVolume(this.value)" id="rngVolume" min="0" max="1" step="0.01" value="1">
-    </div>
-  </div>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/scripts.js"></script>
+    <audio src="CoB.mp3" preload="auto"></audio>
+
   </body>
 </html>
